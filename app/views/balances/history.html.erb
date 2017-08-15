@@ -1,0 +1,75 @@
+<section class="trd-page-breadcumb-header">
+    <div class="container">
+        <div class="row">
+            <h1 class="trd-page-title"> Trade History </h1>
+            <div class="trd-breadcumb-wrapper">
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PAGE HEADER END -->
+
+<!-- PAGE CONTENTS -->
+<section class="trd-page-contents-wrapper">
+    <div class="container">
+        <div class="row">
+          <div class="trd-contact-form-wrapper col-md-12  col-sm-6 col-xs-12">
+              <h1 class="trd-section-tittle">Trade <span class="trd-highlight-text">History</span></h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Trade Id</th>
+            <th>Currency</th>
+            <th>Amount Invested</th>
+            <th>Entry Rate </th>
+              <th>Rate</th>
+                <th>Entry Time</th>
+                  <th>Expiration</th>
+                    <th>Status</th>
+                      <th>Returns</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+            <% @balances.each do |b| %>
+            <tr>
+              <td>
+                <%=b.tradeId %>
+              </td>
+              <td>
+                <%= b.currency %>
+              </td>
+              <td>
+                <%= b.deposit %>
+              </td>
+              <td>
+                <%= b.entry%>
+              </td>
+              <td>
+                <%=b.rate %>
+              </td>
+              <td>
+                <%=b.created_at.strftime("%I:%M %p %b %d") %>
+              </td>
+              <td>
+                <%= b.expiration %>
+              </td>
+              <td>
+                <%= b.status %>
+              </td>
+              <td>
+                <%= b.return%>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</section>

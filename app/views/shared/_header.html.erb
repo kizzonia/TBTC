@@ -1,0 +1,111 @@
+<!-- HEADER -->
+    <header class="trd-header trd-transparent-header trd-fixed-header">
+
+  <div class="trd-header-bottombar">
+  <!-- Navigation Menu start-->
+  <nav class="navbar trd-main-menu" role="navigation">
+    <div class="container">
+      <div class="row">
+        <!-- Navbar Toggle -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <%= link_to root_path, class: "navbar-brand "  do %>
+          <%= image_tag "logo-header-6.png", class: "logo" %>
+          <% end %>
+        </div>
+        <!-- Logo -->
+
+        <!-- Navbar Toggle End -->
+        <div id="nav-menu" class="navbar-collapse trd-menu-wrapper collapse" role="navigation">
+
+          <!-- Menu -->
+          <ul class="nav navbar-nav trd-menus">
+            <!-- navbar-collapse start-->
+
+
+            <li class="active">
+              <%= link_to "Home",  root_path %>
+
+            </li>
+
+            <% if user_signed_in?  %>
+            <li>
+              <%= link_to "Account", balances_path %>
+
+            </li>
+            <li>
+              <%= link_to "Account history", balances_history_path%>
+
+            </li>
+            <% else %>
+            <li>
+              <%= link_to "Abouts", page_path("about") %>
+            </li>
+            <% end %>
+
+
+            <% if user_signed_in?  %>
+
+
+            <li>
+              <%= link_to "Withdraw", new_balance_withdraw_path %>
+
+            </li>
+            <li>
+              <%= link_to "Deposit", new_balance_deposit_path %>
+
+            </li>
+
+            <li>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            </li>
+
+            <% else %>
+
+
+            <li>
+              <%= link_to "Log In / Sign Up", new_user_session_path %>
+
+            </li>
+            <li>
+              <%= link_to "Contact", page_path("contact") %>
+            </li>
+
+            <% end %>
+            <li>
+                <!-- Search -->
+                <span class="trd-search-wrapper">
+                    <a href="#" class="trd-search-icon">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </span>
+                <!-- End -->
+            </li>
+          </ul>
+          <!-- End -->
+        </div>
+        <!-- navbar-collapse end-->
+
+
+
+
+    </div>
+    <!-- navbar-collapse end-->
+
+
+    <span class="trd-contact-num">31 120 3768</span>
+  </div>
+</div>
+</nav>
+<!-- Navigation Menu end-->
+</div>
+<!-- End -->
+</header>
+<!-- HEADER END -->
+
+<!-- HEADER END -->

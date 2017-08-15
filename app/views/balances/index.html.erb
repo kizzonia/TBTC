@@ -1,0 +1,78 @@
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE HEADER -->
+      <section class="trd-page-breadcumb-header">
+          <div class="container">
+              <div class="row">
+                  <h1 class="trd-page-title">DashBoard</h1>
+                  <div class="trd-breadcumb-wrapper">
+
+                      <% @balances.take(1).each do |b| %>
+                      <h3> Current Balance ( $ <%= b.balance %>)</h3>
+                      <% end %>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- PAGE HEADER END -->
+
+      <!-- PAGE CONTENTS -->
+      <section class="trd-page-contents-wrapper">
+          <div class="container">
+              <div class="row">
+
+                  <!-- Sidebar -->
+                  <div class="trd-sidebar trd-sidebar-left col-md-3 col-sm-4 col-xs-12">
+                      <!-- Widget -->
+                      <div class="trd-sidebar-widget trd-pagelink-widget">
+                          <ul>
+                                <li> Account Updates/History  </li>
+                                <% @balances.take(1).each do |balance| %>
+                              <li>
+                             balance   $  <%= balance.balance %>
+                              </li>
+                              <% end %>
+
+
+                          </ul>
+                      </div>
+                      <!-- End -->
+
+                      <!-- Widget -->
+                      <div class="trd-sidebar-widget trd-download-widget">
+                          <p>Download <br>Your <span class="trd-highlight-text">csv</span> from here</p>
+                          <a href="#" class="trd-btn">Download</a>
+                      </div>
+                      <!-- End -->
+                  </div>
+                  <!-- Sidebar End -->
+
+                  <!-- Page Contents -->
+                  <div class=" col-md-9 col-sm-8 col-xs-12">
+                      <div class="col-md-12 embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" frameborder="0" scrolling="no" allowtransparency="true" marginwidth="0" marginheight="0"  src="http://www.indianotes.com/widgets/sensex-nifty-charts/index.php?type=charts&w=900&h=600"></iframe>
+
+  </div>
+  <div class=" col-md-9 col-sm-8 col-xs-12">
+      <div class="col-md-12 embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" frameborder="0" scrolling="no" allowtransparency="true" marginwidth="0" marginheight="0"  src="http://www.indianotes.com/widgets/indices-ticker/index.php?type=indices-ticker&w=900&h=600"></iframe>
+
+</div>
+<div class=" col-md-9 col-sm-8 col-xs-12">
+    <div class="col-md-12 embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" frameborder="0" scrolling="no" allowtransparency="true" marginwidth="0" marginheight="0"  src="http://www.indianotes.com/widgets/currency-prices/index.php?type=all-currency-prices&w=600&h=700"></iframe>
+
+</div>
+
+
+
+
+              </div>
+                    </div>
+
+
+
+          </div>
+        </div>
+      </section>
+      <!-- PAGE CONTENTS END -->
