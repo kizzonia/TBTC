@@ -1,4 +1,8 @@
-<div class="col-md-8 col-md-offset-2" style="margin-top:200px;">
+<%= render "shared/top" %>
+<section class="trd-about-business-section trd-section">
+  <div class="container">
+    <div class="row">
+<div class="col-md-8 col-md-offset-2" style="margin-top:20px;">
 <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -289,3 +293,6 @@
 <%= link_to "Back", :back %>
 </div>
 </div>
+</div>
+</div>
+</section>
