@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'Helpdesk@expertoptioner.com'
+  default from: 'Support@tradebit.com'
   layout 'mailer'
 end

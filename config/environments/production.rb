@@ -83,7 +83,7 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
-config.action_mailer.default_url_options = { host: 'http://www.expertoptioner.com' }
+config.action_mailer.default_url_options = { host: 'http://www.tradebit.herokuapp.com' }
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = true
 
