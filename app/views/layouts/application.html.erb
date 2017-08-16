@@ -17,29 +17,29 @@
   <body class="trd-home-template trd-homepage-six">
       <!-- HEADER -->
 
-          <% if notice %>
-          <div class="container" style="margin-top:800px;">
-            <div class="col-md-8 col-md-offset-2">
-          <div class="alert alert-success fade in">
-             <a href="#" class="close" data-dismiss="alert">&times;</a>
-            <p><%= notice %> </p>
-          </div>
-        </div>
-            </div>
-            <% elsif alert %>
-            <div class="container">
-              <div class="col-md-8 col-md-offset-2">
-                <div class="alert alert-danger fade in">
-                   <a href="#" class="close" data-dismiss="alert">&times;</a>
-                  <p><%= alert %></p>
-                </div>
-              </div>
-            </div>
-                <% end %>
+
 
 
     <%= render "shared/header" %>
-
+    <% if notice %>
+    <div class="container" style="position:absolute; top:400px;">
+      <div class="col-md-8 col-md-offset-2">
+    <div class="alert alert-success fade in">
+       <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <p><%= notice %> </p>
+    </div>
+  </div>
+      </div>
+      <% elsif alert %>
+      <div class="container">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="alert alert-danger fade in">
+             <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <p><%= alert %></p>
+          </div>
+        </div>
+      </div>
+          <% end %>
 
     <%= yield %>
     <%= render "shared/footer" %>
