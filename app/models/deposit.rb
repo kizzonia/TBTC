@@ -12,7 +12,7 @@ class Deposit < MailForm::Base
 def headers
     {
       :subject => "Deposit Request ",
-      :to => "support@expertoptioner.com",
+      :to => "support@daveskeen24@gmail.com",
       :from => %("#{name}" <#{email}>)
     }
   end

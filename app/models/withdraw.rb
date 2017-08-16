@@ -12,7 +12,7 @@ class Withdraw < MailForm::Base
 def headers
     {
       :subject => "Withdrawal Request ",
-      :to => "support@expertoptioner.com",
+      :to => "support@daveskeen24@gmail.com",
       :from => %("#{name}" <#{email}>)
     }
   end

@@ -9,7 +9,7 @@
 
                   <div class="trd-breadcumb-wrapper col-md-6">
 
-                      <% @balances.take(1).each do |b| %>
+                      <% @balances.take(11).each do |b| %>
                       <h3> Current Balance ( $ <%= b.balance %>)</h3>
                       <% end %>
                   </div>
@@ -31,7 +31,7 @@
                       <div class="trd-sidebar-widget trd-pagelink-widget">
                           <ul>
                                 <li> Account Updates/History  </li>
-                                <% @balances.take(1).each do |balance| %>
+                                <% @balances.take(10).each do |balance| %>
                               <li>
                              balance   $  <%= balance.balance %>
                               </li>
