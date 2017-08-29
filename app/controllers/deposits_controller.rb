@@ -1,16 +1,12 @@
 class DepositsController < InheritedResources::Base
-  before_action :find_deposit, only: [  :edit, :update, :destroy]
+  before_action :find_deposit, only: [:show,  :edit, :update, :destroy]
   before_action :authenticate_user!
   def index
     @deposits = Deposit.where(user_id: current_user).order('created_at DESC')
 
   end
   def show
-  #    if valid_page?
-  #   render template: "deposits/#{params[:id]}"
-  #else
-  #   render file: "public/404.html", status: :not_found
-  # end
+
   end
 
   def new
