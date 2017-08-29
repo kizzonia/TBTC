@@ -4,7 +4,7 @@ class Balance::DepositorController < ApplicationController
   end
 
   def create
-    @depositpr = Depositor.new(params[:deposit])
+    @depositor = Depositor.new(params[:depositor])
     @depositor.request = request
     if @depositor.deliver
       flash.now[:error] = nil
