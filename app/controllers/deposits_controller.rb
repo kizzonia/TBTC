@@ -21,7 +21,9 @@ class DepositsController < InheritedResources::Base
     @deposit = current_user.deposits.build(deposit_params)
 
     if @deposit.save
-      UserDepositMailer.deposit_email(@user, @deposit).deliver
+      user = User.find_by_id(@deposit.user_id)
+    deposit = @deposit
+      UserDepositMailer.deposit_email(user, deposit).deliver
       redirect_to @deposit
     else
       render 'new'
