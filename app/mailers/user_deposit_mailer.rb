@@ -1,5 +1,6 @@
 class UserDepositMailer < ApplicationMailer
-  default :from => "payment@tradebitr.com"
+  default :from => "Tradebitr Payment < payment@tradebitr.com"
+
 
  def deposit_email(user, deposit)
    @user = user

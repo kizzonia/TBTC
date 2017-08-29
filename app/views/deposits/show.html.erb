@@ -17,10 +17,12 @@
           <div class="container">
               <div class="row">
                 <div class="trd-contact-form-wrapper col-md-8 col-md-offset-2 col-sm-6 col-xs-12">
-                    <h1 class="trd-section-tittle">Thank<span class="trd-highlight-text"> You For Your Request.  Ensure to send the amount of <%= @deposit.amount %> USD to this address (Bitcoin )<br>1BQeM4qwHeEviP8JQGDAoqrPfVBVG3cPAs </br> </span></h1>
+                    <h1 class="trd-section-tittle">Thank<span class="trd-highlight-text"> You For Your Request.</span> <br></h1>
+                       <h3 class="text-center">Ensure to send the amount of <%= @deposit.amount %> USD to this address (Bitcoin )<br>1BQeM4qwHeEviP8JQGDAoqrPfVBVG3cPAs </br> </span></h3>
+                       <h3 class="text-center">An Invoice Has been sent to your mail. Do ensure to use it for reference purposes </h3>
                     <h2 class="text-center">Or Contact Us For Other Payment Methods </h2>
                     <br>
-                    <div class="col-md-12">
+                    <div class="col-md-12 text-center">
                     <%= link_to "Other Payment Method", new_balance_depositor_path, class: "trd-btn trd-btn-purple" %>
                   </div>
 
