@@ -5,7 +5,7 @@
               <div class="row">
                   <h1 class="trd-page-title">Deposit Funds</h1>
                   <div class="trd-breadcumb-wrapper">
-                    <h2> Deposit </h2>
+
                   </div>
               </div>
           </div>
@@ -17,9 +17,17 @@
           <div class="container">
               <div class="row">
                 <div class="trd-contact-form-wrapper col-md-8 col-md-offset-2 col-sm-6 col-xs-12">
-                    <h1 class="trd-section-tittle">Thank<span class="trd-highlight-text"> You For Your Request. We Will Get Back To You Shortly</span></h1>
+                    <h1 class="trd-section-tittle">Deposit <span class="trd-highlight-text"> Request Form</span></h1>
 
 
+                                        <%= simple_form_for([:balance, @deposit], :url => balance_deposit_index_path) do |f| %>
+                          <%= f.error_notification %>
+                      <%= f.input :name, id: 'trd-name' %>
+                      <%= f.input :email, id: 'trd-email', required: true %>
+                      <%= f.input :amount %>
+                      <%= f.input :message, id: 'trd-message', as: :text, rows: "7", cols: "30" %>
+                      <%= f.submit :submit, class: "btn btn-success btt", label: "Send Message" %>
+                    <% end %>
                 </div>
               </div>
             </div>

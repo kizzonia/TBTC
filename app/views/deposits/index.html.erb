@@ -1,0 +1,49 @@
+<%= render "shared/top" %>
+<section class="trd-page-breadcumb-header">
+    <div class="container">
+        <div class="row">
+            <h1 class="trd-page-title">Account Deposits</h1>
+
+        </div>
+    </div>
+</section>
+<section class="trd-page-contents-wrapper">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center">
+              <%= link_to "Make Deposit", new_deposit_path, class: "trd-btn trd-btn-purple" %>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>  <br>
+            <br>  <br>
+              <br>
+    <% @deposits.each do |deposit| %>
+     <div class="col-md-3">
+       <div class="alert alert-primary">
+         <p class="text-center pb"><%= deposit.created_at.strftime("%d %b %Y")  %></p>
+       </div>
+     </div>
+     <div class="col-md-2">
+       <hr />
+     </div>
+
+     <div class="col-md-7">
+       <div class="alert alert-warning">
+         <h4 class="text-center">Deposit Order Recieved </h4><br>
+         <p> We have recieved your deposit request of <strong><%= deposit.amount %></strong>
+             your account will be credited automatically once confirmed. Thank You <br> You can set a withdrawal request for this deposit after 14 days
+           </p>
+  </div>
+</div>
+<% end %>
+
+
+
+<br>
+</div>
+</div>
+</section>

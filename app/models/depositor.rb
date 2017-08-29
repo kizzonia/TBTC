@@ -1,10 +1,9 @@
-class Withdraw < MailForm::Base
+class Depositor < MailForm::Base
   attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :file,      :attachment => true
   attribute :message
   attribute :amount
-  attribute :bitcoin_address
   attribute :nickname,  :captcha  => true
 
 # Declare the e-mail headers. It accepts anything the mail method
@@ -12,7 +11,7 @@ class Withdraw < MailForm::Base
 
 def headers
     {
-      :subject => "Withdrawal Request ",
+      :subject => "Deposit Request ",
       :to => "payment@tradebitr.com",
       :from => %("#{name}" <#{email}>)
     }

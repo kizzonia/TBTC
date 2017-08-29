@@ -1,19 +1,4 @@
-class Deposit < MailForm::Base
-  attribute :name,      :validate => true
-  attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attribute :file,      :attachment => true
-  attribute :message
-  attribute :amount
-  attribute :nickname,  :captcha  => true
+class Deposit < ApplicationRecord
+  belongs_to :user
 
-# Declare the e-mail headers. It accepts anything the mail method
-# in ActionMailer accepts.
-
-def headers
-    {
-      :subject => "Deposit Request ",
-      :to => "support@daveskeen24@gmail.com",
-      :from => %("#{name}" <#{email}>)
-    }
-  end
 end

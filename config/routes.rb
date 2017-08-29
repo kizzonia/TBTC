@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
 
+  resources :deposits
   resources :balances, except: [:show]
   get 'balances/history',  to: 'balances#history'
 namespace :balance do
   resources :withdraw, only: [:new, :create]
-  resources :deposit, only: [:new, :create]
+  resources :depositor, only: [:new, :create]
 end
 authenticated :user do
    root 'balances#index', as: "authenticated_root"

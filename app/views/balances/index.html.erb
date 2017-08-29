@@ -8,7 +8,7 @@
 
                   <div class="trd-breadcumb-wrapper col-md-6">
 
-                      <% @balances.take(11).each do |b| %>
+                      <% @balances.take(1).each do |b| %>
                       <h3> Current Balance ( $ <%= b.balance %>)</h3>
                       <% end %>
                   </div>
@@ -30,9 +30,9 @@
                       <div class="trd-sidebar-widget trd-pagelink-widget">
                           <ul>
                                 <li> Account Updates/History  </li>
-                                <% @balances.take(10).each do |balance| %>
+                                <% @balances.take(5).each do |balance| %>
                               <li>
-                             balance   $  <%= balance.balance %>
+                             History   $  <%= balance.balance %>
                               </li>
                               <% end %>
 
@@ -43,8 +43,9 @@
 
                       <!-- Widget -->
                       <div class="trd-sidebar-widget trd-download-widget">
-                          <p>Download <br>Your <span class="trd-highlight-text">csv</span> from here</p>
-                          <a href="#" class="trd-btn">Download</a>
+                          <p>View <br>Your <span class="trd-highlight-text">Account History</span> from here</p>
+                        
+                          <%= link_to "Account history", balances_history_path, class: "trd-btn" %>
                       </div>
                       <!-- End -->
                   </div>

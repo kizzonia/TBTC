@@ -1,0 +1,22 @@
+<%= render "shared/top" %>
+<section class="trd-page-breadcumb-header">
+    <div class="container">
+        <div class="row">
+            <h1 class="trd-page-title">New Deposit</h1>
+
+        </div>
+    </div>
+</section>
+<section class="trd-page-contents-wrapper">
+    <div class="container">
+        <div class="row">
+          <div class="trd-contact-form-wrapper col-md-8 col-md-offset-2 col-sm-6 col-xs-12">
+              <h1 class="trd-section-tittle">Deposit <span class="trd-highlight-text"> Request Form</span></h1>
+  <div class="trd-contact-form-wrapper">
+<%= render 'form', deposit: @deposit %>
+</div>
+<%= link_to 'Back', deposits_path %>
+</div>
+</div>
+</div>
+</section>
