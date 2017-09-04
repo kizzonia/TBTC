@@ -18,7 +18,7 @@ class DepositsController < InheritedResources::Base
 
     if @deposit.save
       user = User.find_by_id(@deposit.user_id)
-    deposit = @deposit
+      deposit = @deposit
       UserDepositMailer.deposit_email(user, deposit).deliver
       redirect_to @deposit
     else
@@ -32,10 +32,10 @@ class DepositsController < InheritedResources::Base
   def update
     if @deposit.update(deposit_params)
 
-  redirect_to @deposit
-  else
-  render 'edit'
-  end
+      redirect_to @deposit
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -45,10 +45,10 @@ class DepositsController < InheritedResources::Base
 
 
   private
-    def find_deposit
-      @deposit = Deposit.find(params[:id])
-    end
-    def deposit_params
-      params.require(:deposit).permit(:amount, :bitcoin_address)
-    end
+  def find_deposit
+    @deposit = Deposit.find(params[:id])
+  end
+  def deposit_params
+    params.require(:deposit).permit(:amount, :bitcoin_address)
+  end
 end

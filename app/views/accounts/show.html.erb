@@ -1,0 +1,77 @@
+<%= render "shared/top" %>
+<section class="trd-page-breadcumb-header">
+  <div class="container">
+    <div class="row">
+      <h1 class="trd-page-title">Account Contracts</h1>
+      <small> Account Current Balance <%= number_to_currency( @account.balance, unit: "USD")%>
+      </div>
+    </div>
+  </section>
+  <section class="trd-page-contents-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+            <%= button_tag :new_transaction, id: "btnTrans", class: "trd-btn" do %>
+            Make A Contract
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+
+
+
+
+    <%= render :partial => @account.transactions.reverse %>
+
+
+      <div id="params"> <%= @account.id %> </div>
+
+
+
+  <div class="modal " id="trans-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog bounceIn animated" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Contract</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="notification"></div>
+          <form>
+            <div class="form-group">
+              <label for="Amount" class="form-control-label">Amount</label>
+
+                <%= text_field_tag :amount, 0.00, id: "inputAmount", class: "form-control", placeholder: "Amount", label: "Amount" %>
+
+            </div>
+            <div class="form-group">
+              <label for="Transaction Type" class="form-control-label">Transactio Type:</label>
+              <%= select_tag :transaction_type, options_for_select(Transaction::TRANSACTION_TYPES), id: "selectTrans", class: "form-control", placeholder: "Select Transaction Type" %>
+
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="btnSave" class="trd-btn">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+      <%= javascript_include_tag 'balance/view' %>
+      <script type="text/javascript">
+      $(document).ready(function() {
+        view.init();
+      });
+      </script>

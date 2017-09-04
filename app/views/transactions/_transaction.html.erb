@@ -1,0 +1,57 @@
+<section class="trd-page-contents-wrapper">
+  <div class="container">
+    <div class="row">
+
+    <% if transaction.transaction_type == "deposit" %>
+    <div class="col-md-3">
+      <div class="alert alert-primary">
+        <p class="text-center pb"><%= transaction.created_at.strftime("%d %b %Y") %></p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <hr />
+    </div>
+
+    <div class="col-md-7">
+      <div class="alert alert-warning">
+        <h4 class="text-center">Deposit Order Recieved </h4><br>
+        <p> We have recieved your deposit request of <strong><%= number_to_currency(transaction.amount, unit: "USD") %></strong>
+          with <strong>contract number: <%= transaction.transaction_number %> </strong> your account will be credited automatically once confirmed. Thank You <br> You can set a withdrawal request for this deposit after 14 days
+        </p>
+      </div>
+    </div>
+
+    <% elsif transaction.transaction_type == "withdraw"%>
+
+
+
+
+    <div class="col-md-7">
+      <div class="alert alert-danger">
+        <h4 class="text-center">Withdrawal Order Recieved </h4><br>
+        <p> We have recieved your Withdrawal order of <strong><%= number_to_currency(transaction.amount, unit: "USD") %></strong>
+          with <strong>contract number: <%= transaction.transaction_number %> </strong>  your account will be debited automatically once funds has been transfered to Your wallet address. Thank You <br> Transfer Time 7hours
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <hr />
+    </div>
+
+    <div class="col-md-3">
+      <div class="alert alert-primary">
+        <p class="text-center pb"><%= transaction.created_at.strftime("%d %b %Y")  %></p>
+      </div>
+    </div>
+
+    <% end %>
+
+
+
+
+    <br>
+
+</div>
+</div>
+</section>

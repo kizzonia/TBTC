@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829011433) do
+ActiveRecord::Schema.define(version: 20170902140306) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.decimal  "balance"
+    t.string   "account_number"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "bitcoin_address"
+    t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -65,6 +75,17 @@ ActiveRecord::Schema.define(version: 20170829011433) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "bitcoin_address"
+    t.integer  "balance_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.decimal  "amount"
+    t.string   "transaction_type"
+    t.integer  "account_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "transaction_number"
+    t.index ["account_id"], name: "index_transactions_on_account_id"
   end
 
   create_table "users", force: :cascade do |t|

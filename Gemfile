@@ -14,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem "font-awesome-rails"
 gem "simple_form"
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 

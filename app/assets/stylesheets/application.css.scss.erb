@@ -13,8 +13,10 @@
 
  *= require_self
  */
- @import 'bootstrap.min';
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
  @import "style";
+ @import "animate";
  @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
  @import url("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/fonts/ionicons.svg");
  @import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/fonts/ionicons.eot');
@@ -32,6 +34,12 @@
    font-style: normal;
  }
 
+.modal-dialog {
+    margin-top: 100px;
+}
+.fade.in {
+    opacity: 0.8999 !important;
+}
 .btt{
   font-size: 14px !important;
   font-weight: 700 !important;

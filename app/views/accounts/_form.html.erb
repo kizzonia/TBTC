@@ -1,0 +1,9 @@
+<%= simple_form_for (@account) do |f| %>
+<%= f.error_notification %>
+
+    <%= f.input :bitcoin_address, required: true, autofocus: true, placeholder: "Input Your Default Wallet Address" %>
+
+
+
+    <%= f.submit :submit, class: "btn btn-success btt" %>
+<%end%>
