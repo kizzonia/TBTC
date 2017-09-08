@@ -79,21 +79,21 @@
                 <div id="second" class="tab-pane fade" role="tabpanel">
          
                     <h1 class="trd-section-tittle">Thank<span class="trd-highlight-text"> You For Your Request.</span> <br></h1>
-                       <p class="text-center">Ensure to send the amount  to this address (Bitcoin )<br>1BQeM4qwHeEviP8JQGDAoqrPfVBVG3cPAs </br> </span></p>
+                       <p class="text-center">Ensure to send the amount  to this address (Bitcoin )<br><strong>1BQeM4qwHeEviP8JQGDAoqrPfVBVG3cPAs </strong></br> </span></p>
                        <h5 class="text-center">An Invoice Has been sent to your mail. Do ensure to use it for reference purposes </h5>
                          <div class="form-group">
 
                     <label for="Confirmation" class="form-control-label">Enter Transaction Id/Hash To Confirm payments</label>
 
-                      <%= text_field_tag :txhash, id: "txhash", class: "form-control", placeholder: "Transaction Id",  label: "Transaction Id"  %>
+                      <%= text_field_tag :txhash, 0.00, id: "txhash", class: "form-control", placeholder: "Transaction Id", label: "Transaction Id" %>
                                      <br>
            
                             </div>
-                              <div class=" text-center">
+                              <div class="col-md-12 text-center">
                                      <button type="button" id="btnSave" class="trd-btn">Create Contract</button>
 
                   </div>
-                    <h2 class="text-center">Or Contact Us For Other Payment Methods </h2>
+                    <h4 class="text-center">Or Contact Us For Other Payment Methods </h4>
                     <br>
                   
 
