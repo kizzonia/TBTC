@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TradeBit || Get 100% cashback on any amount in the world largest digital currency trade</title>
+    <title>TradeBit || World's Most Reliable Digital Currency Auto-Trader. </title>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta name="description"  content="TradeBit || Get 100% cashback on any amount in the world largest digital currency Auto-trader. Multipy Your Bitcoins Free. Get free Bitcoins Instantly On Trade Deposits And Refrrals "/>
-    <meta name="keywords" content=" Bitcoin trade multiply your bitcoin free.  bitcoin binary options ">
+    <meta name="description"  content="Invest/ Create A contract with Us today and get 14% of your Investments in just 14 days . And Free bitcoin On  referals "/>
+    <meta name="keywords" content=" Bitcoin trade multiply your bitcoin free. bitcoin binary options, Auto-trading Software , Get Paid Instantly Every 14 days .  Get 25% referal . Get 25% of investment in just 14 days">
 
     <meta name="MobileOptimized" content="320">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,7 +19,10 @@
 </style>
   </head>
 
-  <body class="trd-home-template trd-homepage-six">
+  <body class="trd-home-template trd-homepage-six"  
+   <% if content_for?(:body_attributes) %>
+    <%= yield(:body_attributes) %> 
+  <% end %>>
       <!-- HEADER -->
 
 
@@ -27,7 +30,7 @@
 
     <%= render "shared/header" %>
     <% if notice %>
-    <div class="container" style="position:absolute; top:100px; left:170px; z-index:10;">
+    <div class="container" style="position:absolute; top:100px; left:210px; z-index:10;">
       <div class="col-md-8 col-md-offset-2">
     <div class="alert alert-success fade in">
        <a href="#" class="close" data-dismiss="alert">&times;</a>

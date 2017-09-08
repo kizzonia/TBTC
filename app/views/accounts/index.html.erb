@@ -1,4 +1,7 @@
 <%= render "shared/top" %>
+ <% content_for(:body_attributes) do %>
+    data-turbolinks="false"
+  <% end %>
 <% if Account.where(user_id: current_user.id).exists?%>
 <!-- PAGE HEADER -->
   <section class="trd-page-breadcumb-header">

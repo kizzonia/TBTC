@@ -39,6 +39,13 @@ var view = (function() {
 
   }
 
+  $(function(){
+    $('#changetabbutton').click(function(e){
+    	e.preventDefault();
+        $('#mytabs a[href="#second"]').tab('show');
+    })
+
+});
 
   var initializeEvents = function() {
     $btnNewTrans.on("click", function() {

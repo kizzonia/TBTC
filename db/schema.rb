@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902140306) do
+ActiveRecord::Schema.define(version: 20170907125752) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20170902140306) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "transaction_number"
+    t.string   "txhash"
     t.index ["account_id"], name: "index_transactions_on_account_id"
   end
 
