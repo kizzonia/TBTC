@@ -44,7 +44,7 @@
             </li>
             <% else %>
             <li>
-              <%= link_to "Abouts", page_path("about") %>
+              <%= link_to "About Us", page_path("about") %>
             </li>
             <% end %>
 
@@ -56,10 +56,7 @@
               <%= link_to "Withdraw", new_balance_withdraw_path %>
 
             </li>
-            <li>
-              <%= link_to "Deposit", deposits_path %>
 
-            </li>
 
             <li>
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
@@ -77,15 +74,7 @@
             </li>
 
             <% end %>
-            <li>
-                <!-- Search -->
-                <span class="trd-search-wrapper">
-                    <a href="#" class="trd-search-icon">
-                        <i class="fa fa-search"></i>
-                    </a>
-                </span>
-                <!-- End -->
-            </li>
+
           </ul>
           <!-- End -->
         </div>

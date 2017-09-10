@@ -29,8 +29,9 @@
     <div class="col-md-7">
       <div class="alert alert-danger">
         <h4 class="text-center">Withdrawal Order Recieved </h4><br>
-        <p> We have recieved your Withdrawal order of <strong><%= number_to_currency(transaction.amount, unit: "USD") %></strong>
-          with <strong>contract number: <%= transaction.transaction_number %> </strong>  your account will be debited automatically once funds has been transfered to Your wallet address. Thank You <br> Transfer Time 7hours
+        <p> We have Made your Withdrawal order of <strong><%= number_to_currency(transaction.amount, unit: "USD") %></strong>
+          with <strong>contract number: <%= transaction.transaction_number %> </strong>  your account will be debited automatically once funds has been withdrawn.
+          <strong><%= link_to "Click Here To Confirm Your Withdrawal", new_balance_withdraw_path, class: "btn btn-success btn-xs"%></strong> Thank You <br> Transfer Time 7hours
         </p>
       </div>
     </div>

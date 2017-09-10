@@ -1,124 +1,177 @@
 <%= render "shared/top" %>
 
- <% content_for(:body_attributes) do %>
-    data-turbolinks="false"
-  <% end %>
+<% content_for(:body_attributes) do %>
+data-turbolinks="false"
+<% end %>
 <section class="trd-page-breadcumb-header">
   <div class="container">
     <div class="row">
       <h1 class="trd-page-title">Account Contracts</h1>
       <h4>  Account Current Balance <%= number_to_currency( @account.balance, unit: "USD")%> </h4>
-      </div>
     </div>
-  </section>
-  <section class="trd-page-contents-wrapper">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="text-center">
-            <%= button_tag :new_transaction, id: "btnTrans", class: "trd-btn" do %>
-            Make A Contract
-            <%end%>
-          </div>
+  </div>
+</section>
+<section class="trd-page-contents-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="text-center">
+          <%= button_tag :new_transaction, id: "btnWith", class: "btn1  btn-primary " do %>
+          Withdraw
+          <%end%>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center">
+          <h3> OR </h3>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="text-center">
+          <%= button_tag :new_transaction, id: "btnTrans", class: "btn1  btn1-war" do %>
+          Deposit
+          <%end%>
         </div>
       </div>
     </div>
-  </section>
-  <br>
-  <br>
-  <br>
+  </div>
+</section>
+<br>
+<br>
+<br>
 
 
 
 
-    <%= render :partial => @account.transactions.reverse %>
+<%= render :partial => @account.transactions.reverse %>
 
 
-      <div id="params"> <%= @account.id %> </div>
+<div id="params"> <%= @account.id %> </div>
 
 
 
-  <div class="modal " id="trans-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog bounceIn animated" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Create Contract</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
+<div class="modal " id="trans-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog bounceIn animated" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Contract</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
         <div class="notification"></div>
 
 
-               <div class="trd-tab-wrapper">
-                                <ul class="nav nav-tabs" role="tablist" id="mytabs">
-                                    <li role="presentation" class="active"><a href="#first" aria-controls="pba" role="tab" data-toggle="tab">Order Contract</a></li>
-                                    <li role="presentation"><a href="#second" aria-controls="report" role="tab" data-toggle="tab">Contract Order Confirmation</a></li>
-                                </ul>
+        <div class="trd-tab-wrapper">
+          <ul class="nav nav-tabs" role="tablist" id="mytabs">
+            <li role="presentation" class="active"><a href="#first" aria-controls="pba" role="tab" data-toggle="tab">Order Contract</a></li>
+            <li role="presentation"><a href="#second" aria-controls="report" role="tab" data-toggle="tab">Contract Order Confirmation</a></li>
+          </ul>
 
 
           <form>
-             <div class="tab-content">
-               <div role="tabpanel" class="tab-pane fade in active" id="first">
-                  <div class="form-group">
-                    <label for="Amount" class="form-control-label">Amount</label>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="first">
+                <div class="form-group">
+                  <label for="Amount" class="form-control-label">Amount</label>
 
-                      <%= text_field_tag :amount, 0.00, id: "inputAmount", class: "form-control", placeholder: "Amount", label: "Amount" %>
+                  <%= text_field_tag :amount, 0.00, id: "inputAmount", class: "form-control", placeholder: "Amount", label: "Amount" %>
 
-                  </div>
-            <div class="form-group">
-              <label for="Transaction Type" class="form-control-label">Transactio Type:</label>
-              <%= select_tag :transaction_type, options_for_select(Transaction::TRANSACTION_TYPES), id: "selectTrans", class: "form-control", placeholder: "Select Transaction Type" %>
-              <br>
-              <br>
-                 <button type="button" id="changetabbutton" class="btn btn-primary">Proceed To Confirmation</button>
+                </div>
+                <div class="form-group">
+                  <label for="Transaction Type" class="form-control-label">Transactio Type:</label>
+                  <%= select_tag :transaction_type, options_for_select(["deposit"]), id: "selectTrans", class: "form-control", placeholder: "Select Transaction Type" %>
+                  <br>
+                  <br>
+                  <button type="button" id="changetabbutton" class="btn btn-primary">Proceed To Confirmation</button>
 
+                </div>
+              </div>
+              <div id="second" class="tab-pane fade" role="tabpanel">
+
+                <h1 class="trd-section-tittle">Thank You<span class="trd-highlight-text"> You For Your Request.</span> <br></h1>
+                <p class="text-center">Ensure to send the amount  to this address (Bitcoin )<br><strong>1BQeM4qwHeEviP8JQGDAoqrPfVBVG3cPAs </strong></br> </span></p>
+                <div class="form-group">
+
+                  <label for="Confirmation" class="form-control-label">Enter Transaction Id/Hash To Confirm payments</label>
+
+                  <%= text_field_tag :txhash, 0.00, id: "txhash", class: "form-control", placeholder: "Transaction Id", label: "Transaction Id" %>
+                  <br>
+
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="button" id="btnSave" class="trd-btn">Create Contract</button>
+
+                </div>
+                <h4 class="text-center">Or Contact Us For Other Payment Methods </h4>
+                <br>
+
+
+
+              </div>
             </div>
-            </div>
-                <div id="second" class="tab-pane fade" role="tabpanel">
-         
-                    <h1 class="trd-section-tittle">Thank<span class="trd-highlight-text"> You For Your Request.</span> <br></h1>
-                       <p class="text-center">Ensure to send the amount  to this address (Bitcoin )<br><strong>1BQeM4qwHeEviP8JQGDAoqrPfVBVG3cPAs </strong></br> </span></p>
-                       <h5 class="text-center">An Invoice Has been sent to your mail. Do ensure to use it for reference purposes </h5>
-                         <div class="form-group">
-
-                    <label for="Confirmation" class="form-control-label">Enter Transaction Id/Hash To Confirm payments</label>
-
-                      <%= text_field_tag :txhash, 0.00, id: "txhash", class: "form-control", placeholder: "Transaction Id", label: "Transaction Id" %>
-                                     <br>
-           
-                            </div>
-                              <div class="col-md-12 text-center">
-                                     <button type="button" id="btnSave" class="trd-btn">Create Contract</button>
-
-                  </div>
-                    <h4 class="text-center">Or Contact Us For Other Payment Methods </h4>
-                    <br>
-                  
-
-
-            </div>
-                       </div>
           </form>
 
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <%= link_to "Other Payment Method", new_balance_depositor_path, class: "trd-btn trd-btn-purple" %>
+          <%= link_to "Other Payment Method", new_balance_depositor_path, class: "trd-btn trd-btn-purple" %>
 
 
         </div>
       </div>
     </div>
   </div>
+    </div>
+
+  <!---second modal for withdraw -->
+  <div class="modal" id="withdrawModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog bounceIn animated" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Make A Withdrawal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="notification"></div>
+          <form>
+            <div class="form-group">
+              <label for="Amount" class="form-control-label">Amount</label>
+
+              <%= text_field_tag :amount, 0.00, id: "inputAmount2", class: "form-control", placeholder: "Amount", label: "Amount" %>
+
+            </div>
+            <div class="form-group">
+              <label for="Transaction Type" class="form-control-label">Transaction Type:</label>
+              <%= select_tag :transaction_type, options_for_select(["withdraw"]), id: "selectTrans2", class: "form-control", placeholder: "Select Transaction Type" %>
+              <br>
+              <br>
+
+            </div>
+
+          </form>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="btnSave2" class="trd-btn">Submit</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
-      <%= javascript_include_tag 'balance/view' %>
-      <script type="text/javascript">
-      $(document).ready(function() {
-        view.init();
-      });
-      </script>
+
+
+
+  <%= javascript_include_tag 'balance/view' %>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    view.init();
+  });
+  </script>

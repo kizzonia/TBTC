@@ -20,13 +20,13 @@
                     <h1 class="trd-section-tittle">Withdrawal <span class="trd-highlight-text">Form</span></h1>
 
                     <%= simple_form_for([:balance, @withdraw], :url => balance_withdraw_index_path) do |f| %>
-      <%= f.error_notification %>
+                    <%= f.error_notification %>
 
                       <%= f.input :name, id: 'trd-name' %>
                       <%= f.input :email, id: 'trd-email' %>
+                      <%= f.input :account_number, id: 'trd-email', required: true, autofocus: true, placeholder: "Your Account Number" %>
                       <%= f.input :amount %>
                       <%= f.input :bitcoin_address %>
-                      <%= f.input :message, id: 'trd-message', as: :text, rows: "7", cols: "30" %>
                       <%= f.submit :submit, class: "btn btn-success btt ", label: "Send Message" %>
                     <% end %>
                 </div>

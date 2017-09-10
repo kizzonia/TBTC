@@ -2,7 +2,7 @@ class Withdraw < MailForm::Base
   attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :file,      :attachment => true
-  attribute :message
+  attribute :account_number
   attribute :amount
   attribute :bitcoin_address
   attribute :nickname,  :captcha  => true
