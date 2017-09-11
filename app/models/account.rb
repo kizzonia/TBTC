@@ -1,4 +1,7 @@
 class Account < ApplicationRecord
+  extend FriendlyId
+  friendly_id :account_number, use: :slugged
+
   belongs_to :user
   has_many :transactions
 

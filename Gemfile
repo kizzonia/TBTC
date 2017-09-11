@@ -17,7 +17,7 @@ gem "simple_form"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
-
+gem 'friendly_id'
 
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
