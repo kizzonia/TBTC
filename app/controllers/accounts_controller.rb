@@ -6,7 +6,7 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @account = Account.find(params[:id])
+    @account = Account.friendly.find(params[:id])
   end
 
   def new
@@ -25,12 +25,12 @@ class AccountsController < ApplicationController
     end
   end
   def edit
-    
+
   end
 
   def update
     if @account.update(account_params)
-      
+
             redirect_to @account
           else
             render 'edit'
@@ -39,7 +39,7 @@ class AccountsController < ApplicationController
 
   private
   def find_account
-    @account = Account.find(params[:id])
+    @account = Account.friendly.find(params[:id])
   end
 
   def account_params
