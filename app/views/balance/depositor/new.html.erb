@@ -20,7 +20,7 @@
                     <h1 class="trd-section-tittle">Deposit <span class="trd-highlight-text"> Request Form</span></h1>
 
 
-                                        <%= simple_form_for([:balance, @depositor], :url => balance_depositor_index_path) do |f| %>
+                      <%= simple_form_for([:balance, @depositor], :url => balance_depositor_index_path) do |f| %>
                           <%= f.error_notification %>
                       <%= f.input :name, id: 'trd-name' %>
                       <%= f.input :email, id: 'trd-email', required: true %>

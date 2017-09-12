@@ -1,9 +1,10 @@
 module Accounts
   class PerformTransaction
-    def initialize(amount:, transaction_type:, account_id:)
+    def initialize(amount:, transaction_type:, account_id:, txhash:)
       @amount = amount.try(:to_f)
       @transaction_type = transaction_type
       @account_id = account_id
+      @txhash = txhash
      # @transaction = transaction
       @account = Account.where(id: @account_id).first
   end
@@ -11,7 +12,9 @@ module Accounts
     Transaction.create!(
       amount: @amount,
       transaction_type: @transaction_type,
-      account: @account
+      account: @account,
+      txhash: @txhash
+
      )
     if @transaction_type == "withdraw"
       @account.update!(balance: @account.balance - @amount)

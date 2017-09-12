@@ -80,7 +80,7 @@ data-turbolinks="false"
 
                 </div>
                 <div class="form-group">
-                  <label for="Transaction Type" class="form-control-label">Transactio Type:</label>
+                  <label for="Transaction Type" class="form-control-label">Transaction Type:</label>
                   <%= select_tag :transaction_type, options_for_select(["deposit"]), id: "selectTrans", class: "form-control", placeholder: "Select Transaction Type" %>
                   <br>
                   <br>
@@ -91,21 +91,21 @@ data-turbolinks="false"
               <div id="second" class="tab-pane fade" role="tabpanel">
 
                 <h1 class="trd-section-tittle">Thank You<span class="trd-highlight-text"> You For Your Request.</span> <br></h1>
-                <p class="text-center">Ensure to send the amount  to this address (Bitcoin )<br><strong>1BQeM4qwHeEviP8JQGDAoqrPfVBVG3cPAs </strong></br> </span></p>
+                <p class="text-center">Ensure to send the amount  to this address (Bitcoin )<br><br><strong>1BQeM4qwHeEviP8JQGDAoqrPfVBVG3cPAs </strong></br><br> </span></p>
                 <div class="form-group">
 
                   <label for="Confirmation" class="form-control-label">Enter Transaction Id/Hash To Confirm payments</label>
 
-                  <%= text_field_tag :txhash, 0.00, id: "txhash", class: "form-control", placeholder: "Transaction Id", label: "Transaction Id" %>
+                  <%= text_field_tag :txhash, "", id: "txhash", class: "form-control", placeholder: "Transaction Id", label: "Transaction Id" %>
                   <br>
 
                 </div>
+                <br>
                 <div class="col-md-12 text-center">
-                  <button type="button" id="btnSave" class="trd-btn">Create Contract</button>
+                  <button type="button" id="btnSave" class="btn1 btn-success">Create Contract</button>
 
                 </div>
-                <h4 class="text-center">Or Contact Us For Other Payment Methods </h4>
-                <br>
+
 
 
 

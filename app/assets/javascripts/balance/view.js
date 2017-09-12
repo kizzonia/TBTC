@@ -31,7 +31,8 @@ var view = (function() {
     $notification    = $(".notification");
     $btnWith         = $("#btnWith");
     $withdrawModal   = $("#withdrawModal");
-    
+    $txhash          = $("#txhash");
+
 // called the acctId because paramas rails aint calling
      var accountId  = $('#params').text();
   };
@@ -65,13 +66,14 @@ var view = (function() {
     // button save
       $btnSave.on('click', function() {
         //get values from forms
-        var amount      = $inputAmount.val();
+        var amount           = $inputAmount.val();
         var transaction_type = $selectTrans.val();
+        var txhash           = $txhash.val();
 
 
         disableControls();
 
-        console.log("Amount:" + amount + "transaction_type :"+ transaction_type  +  "  account_id:" + accountId );
+        console.log("Amount:" + amount + "transaction_type :"+ transaction_type  +  "  account_id:" + accountId + "txhash:" + txhash );
           $notification.html("");
         $.ajax({
                 url: url,
@@ -80,7 +82,10 @@ var view = (function() {
                 data: {
                     amount: amount,
                     transaction_type: transaction_type,
+                    txhash: txhash,
                     account_id: accountId
+
+
                 },
                 success: function(response) {
                     window.location.href = "/accounts/" + accountId;
