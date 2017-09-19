@@ -16,6 +16,7 @@ var view = (function() {
   var $txhash;
   var accountId  = $('#params').text();
   var $notification;
+  var $notification2;
   var url = "/api/v1/accounts/new_transaction";
 // set the above variables  to  their corresponing id
   var fetchElements = function() {
@@ -59,7 +60,7 @@ var view = (function() {
     })
 
 });
-
+//deposit event
   var initializeEvents = function() {
     $btnNewTrans.on("click", function() {
       $transModal.modal("show");
@@ -92,6 +93,7 @@ var view = (function() {
                 },
                 error: function(response) {
                     $notification.html(JSON.parse(response.responseText).errors.join());
+                          enableControls();
                 }
 
 
@@ -99,8 +101,10 @@ var view = (function() {
       })
     });
     });
-  };
+  };//deposit event end
 
+
+// withdrwal event
   var initializeSecondEvents = function() {
     $btnWith.on("click", function() {
       $withdrawModal.modal("show");
@@ -113,7 +117,7 @@ var view = (function() {
         disableControls();
 
         console.log("Amount:" + amount + "transaction_type :"+ transaction_type  +  "  account_id:" + accountId );
-          $notification.html("");
+          $notification2.html("");
         $.ajax({
                 url: url,
                 method: "POST",
@@ -127,7 +131,8 @@ var view = (function() {
                     window.location.href = "/accounts/" + accountId;
                 },
                 error: function(response) {
-                    $notification.html(JSON.parse(response.responseText).errors.join());
+                    $notification2.html(JSON.parse(response.responseText).errors.join());
+                    enableControls();
                 }
 
 
@@ -136,6 +141,7 @@ var view = (function() {
     });
     });
   };
+  //Withdrawal event end
 
 
 
@@ -143,8 +149,8 @@ var view = (function() {
 
   var init = function() {
     fetchElements();
-    initializeEvents();
-   initializeSecondEvents();
+    initializeEvents();//deposit
+   initializeSecondEvents();//Withdrawal
   };
 
   return {

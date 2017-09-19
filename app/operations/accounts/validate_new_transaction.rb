@@ -13,14 +13,29 @@ module Accounts
     validate_existence_of_account!
     if @transaction_type == "withdraw" and @account.present?
       validate_withdrawal!
-      @errors
+    elsif @transaction_type == "deposit" and @account.present?
+      validate_deposit!
     end
+    @errors
   end
 
   private
   def validate_withdrawal!
     if @account.balance - @amount < 50.00
       @errors << "Not Enough Funds available For Withdrawal"
+    end
+  end
+
+  def validate_deposit!
+    if @txhash.blank?
+      @errors << "Transaction Hash can't be blank"
+    end
+
+    if @amount == 0.00
+      @errors << "Please enter a valid amount "
+    elsif @amount < 50.00
+      @errors << "Amount must be higher than USD 50.00"
+
     end
   end
 
