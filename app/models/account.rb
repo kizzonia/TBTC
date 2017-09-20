@@ -17,6 +17,14 @@ class Account < ApplicationRecord
     end
   end
 
+#  def auto_increment
+  #  @accounts.each do |account|
+  #   if account.balance > 0.00
+  #    @divider = account.balance * 0.01
+  #  end
+  #   account.update_attribute(balance: account.balance + @divider)
+  # end
+  #end
 
 
 end
