@@ -30,11 +30,10 @@ class AccountsController < ApplicationController
 
   def update
     if @account.update(account_params)
-
-            redirect_to @account
-          else
-            render 'edit'
-          end
+      redirect_to @account
+    else
+      render 'edit'
+    end
   end
 
   private
