@@ -6,6 +6,7 @@ namespace :accounts do
       divider = account.balance * 0.01
       newBalance = account.balance + divider
       account.update!(balance: newBalance )
+      puts "Increment Of Account balance by 1% done"
     end
   end
 end
