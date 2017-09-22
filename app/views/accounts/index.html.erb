@@ -11,19 +11,19 @@
           <% @accounts.take(1).each do |a| %>
           <h3>  Account balance: <%= number_to_currency(a.balance, unit: "USD") %></h3>
           <small> Bitoin Address: <%= a.bitcoin_address %></small>
-         
+
         </div>
          <div class=" col-md-8">
          <div class="row">
-            <h3 class="col-md-9">Start Earning While You  <span class="trd-highlight-text"> Sleep
+            <h3 class="col-md-9">Start Earning A  <span class="trd-highlight-text"> Percentage Daily
             </span> By Making A  </h3>
             <div class="col-md-3">
           <%= link_to a, class: "trd-btn trd-btn-alt" do %> Contract<% end %>
           </div>
             </div>
-                   
 
-                 
+
+
                 </div>
                 <% end %>
 
@@ -33,7 +33,7 @@
 
     <!-- PAGE CONTENTS -->
 
-               
+
     <section class="trd-page-contents-wrapper">
       <div class="container">
 
@@ -52,7 +52,7 @@
                 <li>
                   Account Number: <%= a.account_number%>
                 </li>
-               
+
                 <li>
                   Account balance: <%= number_to_currency(a.balance, unit: "USD") %>
 
@@ -134,5 +134,5 @@
                 <br>
           </div>
       </div>
-    </section> 
+    </section>
 <%end%>
