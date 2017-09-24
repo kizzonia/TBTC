@@ -15,4 +15,10 @@ permit_params :account_number, :user_id, :balance, :bitcoin_address
 def display_name
   self.email
 end
+controller do
+       def find_resource
+         scoped_collection.friendly.find(params[:id])
+       end
+     end
+   
 end
