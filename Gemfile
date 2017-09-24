@@ -23,7 +23,7 @@ gem 'sitemap_generator'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'active_admin_flat_skin'
+gem "active_material", github: "vigetlabs/active_material"
 gem 'activeadmin', github: 'activeadmin'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
