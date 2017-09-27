@@ -6,7 +6,7 @@ ActiveAdmin.register Account do
 #
 # or
 #
-permit_params :account_number, :user_id, :balance, :bitcoin_address
+permit_params :account_number, :user_id, :balance, :bitcoin_address, :slug
 # permit_params do
 #   permitted = [:permitted, :attributes]
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
@@ -20,5 +20,5 @@ controller do
          scoped_collection.friendly.find(params[:id])
        end
      end
-   
+
 end
