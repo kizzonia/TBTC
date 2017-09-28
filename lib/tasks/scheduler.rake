@@ -3,6 +3,7 @@ namespace :accounts do
   task :increment => :environment do
     accounts = Account.all.includes(:transactions)
     accounts.each do |account|
+      if account.transactions.present?
       account.transactions.each do |t|
         if t.transaction_type = "deposit"
             @divider = t.amount * 0.01
@@ -12,5 +13,6 @@ namespace :accounts do
       account.update!(balance: newBalance )
       puts "Increment Of Account balance by 1% done"
     end
+  end
   end
 end
