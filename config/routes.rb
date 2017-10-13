@@ -1,23 +1,6 @@
 Rails.application.routes.draw do
 
 
-
-  namespace :managment do
-    get 'blogs/index'
-  end
-
-  namespace :managment do
-    get 'blogs/show'
-  end
-
-  namespace :managment do
-    get 'blogs/new'
-  end
-
-  namespace :managment do
-    get 'blogs/edit'
-  end
-
   resources :blogs, only: [:index, :show]
 
   mount Ckeditor::Engine => '/ckeditor'

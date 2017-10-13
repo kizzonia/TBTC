@@ -12,11 +12,12 @@
 
       <div class="panel-body">
         <div class="thumb">
-          <img src="assets/images/demo/images/blog1.jpg" alt="" class="img-responsive">
-              <%= image_tag (b.blogimg_url.to_s) %>
+
+              <%= image_tag (b.blogimg_url.to_s), class: "img-responsive" %>
           <div class="caption-overflow">
             <span>
-              <a href="blog_single.html" class="btn btn-flat border-white text-white btn-rounded btn-icon"><i class="icon-arrow-right8"></i></a>
+              <%= link_to managment_blog_path(b), class: "btn btn-flat border-white text-white btn-rounded btn-icon" do %>
+              <i class="icon-arrow-right8"></i><%end%>
             </span>
           </div>
         </div>
@@ -45,7 +46,7 @@
 
           </ul>
 
-          <%= link_to b, class: "heading-text pull-right" do %>
+          <%= link_to managment_blog_path(b), class: "heading-text pull-right" do %>
             Read more <i class="icon-arrow-right14 position-right"></i>
             <% end %>
         </div>

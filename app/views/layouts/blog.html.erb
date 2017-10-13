@@ -46,9 +46,7 @@
 
   <body class="">
     <!-- LOADER -->
-    <div id="preloader">
-      <%= image_tag "loader.gif", class: "preloader" %>
-    </div><!-- end loader -->
+    <!-- end loader -->
     <!-- END LOADER -->
    <% if content_for?(:body_attributes) %>
     <%= yield(:body_attributes) %>
@@ -80,7 +78,7 @@
                   <li class="active"><%= link_to "Knowlede Base", kbs_path %></li>
                   <li><%= link_to "Blog", blogs_path %></li>
                   <li><a href="#">Forums</a></li>
-                  <li><a href="documentation.html">White Paper</a></li>
+                  <li><a href="https://drive.google.com/open?id=0B5jZgQVjo_uQbVNTbWtIZWoyS1U">White Paper</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li><%= link_to new_user_registration_path do %><i class="material-icons"></i>
