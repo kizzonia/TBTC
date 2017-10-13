@@ -1,0 +1,33 @@
+<%= simple_form_for ([:managment, @account]) do |f| %>
+<div class="panel panel-flat">
+  <div class="panel-heading">
+    <h5 class="panel-title">Edit Account</h5>
+    <div class="heading-elements">
+      <ul class="icons-list">
+                <li><a data-action="collapse"></a></li>
+                <li><a data-action="reload"></a></li>
+                <li><a data-action="close"></a></li>
+              </ul>
+            </div>
+  </div>
+
+  <div class="panel-body">
+<%= f.error_notification %>
+<fieldset>
+  <legend class="text-semibold">
+    <i class="icon-file-text2 position-left"></i>
+    Enter your information
+    <a class="control-arrow" data-toggle="collapse" data-target="#demo1">
+      <i class="icon-circle-down2"></i>
+    </a>
+  </legend>
+
+    <%= f.input :bitcoin_address, required: true, autofocus: true, placeholder: "Input Your Default Wallet Address", class: "form-control" %>
+
+										</fieldset>
+<div class="text-right">
+    <%= f.submit :submit, class: "btn btn-success"  do %>
+    <i class="icon-arrow-right14 position-right"></i>
+    <% end %>
+  </div>
+<%end%>

@@ -1,0 +1,112 @@
+<section class="section">
+  <div class="container">
+    <div class="page-title text-center">
+      <h1>Knowledge Base:Tradebitr</h1>
+      <ul class="breadcrumb">
+        <li><a href="javascript:void(0)">Home</a></li>
+        <li class="active">Knowledge Base</li>
+        <li class="active"><%= @kb.title %></li>
+      </ul>
+      <!--  <form class="site-search b text-left">
+      <div class="form-group label-floating">
+      <label class="control-label" for="focusedInput2">How may I help you today?</label>
+      <input class="form-control" id="focusedInput2" type="text">
+    </div>
+    <div class="form-group clearfix">
+    <div class="checkbox pull-left">
+    <label>
+    <input type="checkbox"> &nbsp;Topics
+  </label>
+  <label>
+  <input type="checkbox"> &nbsp;Forums
+</label>
+<label>
+<input type="checkbox"> &nbsp;Knowledge Base
+</label>
+</div>
+<div class="submit-button pull-right">
+<a class="btn btn-raised btn-info gr" href="#"><i class="material-icons">search</i> Search</a>
+</div>
+</div>
+</form>
+</div>
+end title -->
+</div><!-- end container -->
+</section><!-- end section -->
+<section class="section lb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="widget">
+          <div class="custom-module">
+            <h4 class="module-title"><i class="material-icons">line_style</i> Top FAQ's </h4>
+            <div class="list-group">
+              <% @kbs.each do |k| %>
+              <div class="list-group-item">
+                <div class="row-content">
+                  <p class="list-group-item-heading">
+                    <%= link_to k do %>
+                    <i class="material-icons">description</i>
+                    <%= k.question %>?<%end %>
+                  </p>
+                </div>
+              </div>
+              <% end %>
+
+
+            </div>
+            <%= link_to "View all Answers →", kbs_path, class: "Read more" %>
+          </div><!-- end custom-module -->
+        </div><!-- end widget -->
+
+        <div class="widget">
+
+        </div><!-- end widget -->
+      </div>
+      <div class="col-md-8">
+        <div class="topic-list knowledge-base-single">
+          <article class="well btn-group-sm clearfix">
+            <header class="topic-title clearfix">
+              <h3><%= @kb.title %></h3>
+              <small>Created : <%= @kb.created_at.strftime("d%, b% Y%") %></small>
+            </header>
+
+            <div class="topic-meta clearfix">
+
+
+            </div>
+            <!-- end topic-meta -->
+
+            <div class="topic-desc row clearfix">
+              <div class="col-sm-12">
+                <h4><%= @kb.question %></h4>
+                <p><%= raw(@kb.body) %> </p>
+
+            </div>
+          </div>
+          <!-- end tpic-desc -->
+
+          <footer class="topic-footer clearfix">
+
+
+            <div class="pull-right">
+              <div class="customshare">
+                <div class="list">
+                  <div class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">share</i>
+                    <ul class="list-inline">
+                      <li><%= social_share_button_tag(@kb.title) %></li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer><!-- end topic -->
+        </article><!-- end article well -->
+
+
+      </div>
+    </div><!-- end col -->
+  </div><!-- end row -->
+</div><!-- end container -->
+</section><!-- end section -->

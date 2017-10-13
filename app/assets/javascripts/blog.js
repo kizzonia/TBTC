@@ -1,0 +1,10 @@
+//= require jquery
+//= require bootstrap-sprockets
+//= require bootstrap
+//= require jquery_ujs
+//= require turbolinks
+//= require social-share-button
+// Vendor Files
+//= require ripple.min
+//= require material.min
+//= require custom

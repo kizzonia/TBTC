@@ -19,6 +19,11 @@ gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 gem 'friendly_id'
 gem 'sitemap_generator'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'carrierwave'
+gem "mini_magick"
+gem "fog-aws"
+gem 'social-share-button', '~> 0.1.6'
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'

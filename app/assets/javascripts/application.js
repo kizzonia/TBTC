@@ -16,5 +16,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require plugins
-
 //= require main

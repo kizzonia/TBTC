@@ -6,7 +6,6 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @account = Account.friendly.find(params[:id])
   end
 
   def new
@@ -35,13 +34,19 @@ class AccountsController < ApplicationController
       render 'edit'
     end
   end
-
+#  def destroy
+#    @account.destroy
+  #  respond_to do |format|
+  #    format.html { redirect_to accounts_url, notice: 'Account was successfully destroyed.' }
+  #    format.json { head :no_content }
+  #  end
+#  end
   private
   def find_account
     @account = Account.friendly.find(params[:id])
   end
 
   def account_params
-    params.require(:account).permit(:account_number, :balance, :bitcoin_address)
+    params.require(:account).permit(:account_number, :balance, :user_id, :bitcoin_address, :slug)
   end
 end

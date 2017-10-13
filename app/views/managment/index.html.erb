@@ -1,0 +1,36 @@
+<%= render "mshared/header" %>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel">
+      <div class="panel-body text-center">
+        <div class="icon-object border-success-400 text-success"><i class="icon-book"></i></div>
+        <h5 class="text-semibold">Knowledge Base</h5>
+        <p class="mb-15">View all posted Information that customers should know and answer important FAQ's</p>
+        <%= link_to  "Browse articles", kbs_path, class: "btn bg-success-400" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="panel">
+      <div class="panel-body text-center">
+        <div class="icon-object border-warning-400 text-warning"><i class="icon-lifebuoy"></i></div>
+        <h5 class="text-semibold">Support center</h5>
+        <p class="mb-15">View all posted Information that customers should know and answer important FAQ's</p>
+        <%= link_to "Open/new ticket", new_managment_kb_path, class: "btn bg-warning-400" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="panel">
+      <div class="panel-body text-center">
+        <div class="icon-object border-blue text-blue"><i class="icon-reading"></i></div>
+        <h5 class="text-semibold">Requests New Software Features</h5>
+        <p class="mb-15"> Send The Software engineers an update request</p>
+        <a href="#" class="btn bg-blue">Coming Soon</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /info blocks -->

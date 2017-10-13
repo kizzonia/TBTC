@@ -1,0 +1,59 @@
+<div class="row">
+  <%@blogs.each do |b| %>
+  <div class="col-lg-6">
+
+    <!-- Blog layout #1 with image -->
+    <div class="panel panel-flat blog-horizontal blog-horizontal-1">
+      <div class="panel-heading">
+        <h5 class="panel-title text-semibold">
+          <%= b.title %>
+        </h5>
+      </div>
+
+      <div class="panel-body">
+        <div class="thumb">
+          <img src="assets/images/demo/images/blog1.jpg" alt="" class="img-responsive">
+              <%= image_tag (b.blogimg_url.to_s) %>
+          <div class="caption-overflow">
+            <span>
+              <a href="blog_single.html" class="btn btn-flat border-white text-white btn-rounded btn-icon"><i class="icon-arrow-right8"></i></a>
+            </span>
+          </div>
+        </div>
+
+        <div class="blog-preview">
+          <p> <%= b.description %></p>
+          </div>
+      </div>
+
+      <div class="panel-footer panel-footer-transparent">
+        <div class="heading-elements">
+          <ul class="list-inline list-inline-separate heading-text text-muted">
+            <li>By <a href="http://tradebitr.com" class="text-muted">Tradebitr Community</a></li>
+            <li><%= b.created_at.strftime("%b, %d, %y") %></li>
+            <li><%= social_share_button_tag(b.title) %></li>
+            <li>   <%= link_to edit_managment_blog_path(b), class: "text-muted" do %>
+
+              <i class=" icon-pencil5 position-left"></i> Edit
+              <% end %>
+            </li>
+            <li>
+                <%= link_to managment_blog_path(b), method: :delete, class: "text-muted" do %>
+              <i class="icon-bin2 position-left"></i> Del
+                <%end %>
+            </li>
+
+          </ul>
+
+          <%= link_to b, class: "heading-text pull-right" do %>
+            Read more <i class="icon-arrow-right14 position-right"></i>
+            <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- /blog layout #1 with image -->
+
+  </div>
+<% end %>
+</div>
+<!-- /layout 1 -->

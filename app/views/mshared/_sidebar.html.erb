@@ -1,0 +1,106 @@
+<!-- Page container -->
+<div class="page-container">
+
+  <!-- Page content -->
+  <div class="page-content">
+
+    <!-- Main sidebar -->
+    <div class="sidebar sidebar-main sidebar-fixed">
+      <div class="sidebar-content">
+
+        <!-- User menu -->
+        <div class="sidebar-user-material">
+          <div class="category-content">
+            <div class="sidebar-user-material-content">
+              <h6><%= current_managment.email %></h6>
+
+            </div>
+
+            <div class="sidebar-user-material-menu">
+              <a href="#user-nav" data-toggle="collapse"><span>My account</span> <i class="caret"></i></a>
+            </div>
+          </div>
+
+          <div class="navigation-wrapper collapse" id="user-nav">
+            <ul class="navigation">
+           <li><%=link_to edit_managment_registration_path do %>
+                  <i class="icon-cog5"></i> <span>Account settings</span>
+                <% end %>
+            </li>
+              <li class="divider"></li>
+              <li><%=link_to destroy_managment_session_path, method: :delete do %>
+                <i class="icon-switch2"></i> <span>Logout</span>
+              <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /user menu -->
+
+
+        <!-- Main navigation -->
+        <div class="sidebar-category sidebar-category-visible">
+          <div class="category-content no-padding">
+            <ul class="navigation navigation-main navigation-accordion">
+
+              <!-- Main -->
+              <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
+              <li><%=link_to root_path do %><i class="icon-home4"></i> <span>Dashboard</span>
+              <% end %>
+              </li>
+              <li>
+                <a href="#"><i class="icon-stack2"></i> <span>Accounts</span></a>
+                <ul>
+                  <li><%=link_to managment_accounts_path do %>All Accounts<% end %></li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i class="icon-copy"></i> <span>Transactions</span></a>
+                <ul>
+                  <li><%=link_to managment_transactions_path do %>All Transactions <% end %></li>
+                  <li><a href="">withdrawal Requests </a></li>
+              </li>
+            </ul>
+          </li>
+                <!--Main -->
+
+              <!-- Forms -->
+              <li class="navigation-header"><span>Social Media</span> <i class="icon-menu" title="Forms"></i></li>
+              <li>
+                <a href="#"><i class="icon-pencil3"></i> <span>Knowledge Base</span></a>
+                <ul>
+                  <li><%=link_to managment_kbs_path do %>All knowledges<% end %></li>
+                  <li><%=link_to new_managment_kb_path do %>Add New Knwoledgde <% end %></li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i class="icon-file-css"></i> <span>Blog</span></a>
+                <ul>
+                  <li><%= link_to managment_blogs_path do %> All Posts <%end %></li>
+                  <li><%= link_to "New Posts", new_managment_blog_path %></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i class="icon-footprint"></i> <span>Forum</span></a>
+                <ul>
+                  <li><a href="wizard_steps.html">Coming soon</a></li>
+                  <li><a href="wizard_form.html">Coming soon</a></li>
+                  <li><a href="wizard_stepy.html">Coming soon</a></li>
+                </ul>
+              </li>
+
+
+              <!-- /forms -->
+
+
+
+            </ul>
+          </div>
+        </div>
+        <!-- /main navigation -->
+
+      </div>
+    </div>
+    <!-- /main sidebar -->

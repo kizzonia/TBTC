@@ -1,60 +1,60 @@
 <% content_for(:body_attributes) do %>
-   data-turbolinks="false"
- <% end %>
+data-turbolinks="false"
+<% end %>
 <%= render "shared/top" %>
 
 <% if Account.where(user_id: current_user.id).exists?%>
 <!-- PAGE HEADER -->
-  <section class="trd-page-breadcumb-header">
-    <div class="container">
-      <div class="row">
-        <div class="trd-breadcumb-wrapper col-md-4">
-          <% @accounts.take(1).each do |a| %>
-          <h3>  Account balance: <%= number_to_currency(a.balance, unit: "$") %></h3>
-          <small> Bitoin Address: <%= a.bitcoin_address %></small>
-
-        </div>
-         <div class=" col-md-8">
-         <div class="row">
-            <h3 class="col-md-9">Start Earning A  <span class="trd-highlight-text"> Percentage Daily
-            </span> By Making A  </h3>
-            <div class="col-md-3">
-          <%= link_to a, class: "trd-btn trd-btn-alt" do %> Contracts <% end %>
-          </div>
-            </div>
-
-
-
-                </div>
-                <% end %>
+<section class="trd-page-breadcumb-header">
+  <div class="container">
+    <div class="row">
+      <div class="trd-breadcumb-wrapper col-md-4">
+        <% @accounts.take(1).each do |a| %>
+        <h3>  Account balance: <%= number_to_currency(a.balance, unit: "$") %></h3>
+        <small> Bitoin Address: <%= a.bitcoin_address %></small>
 
       </div>
-    </section>
-    <!-- PAGE HEADER END -->
-
-    <!-- PAGE CONTENTS -->
-
-
-    <section class="trd-page-contents-wrapper">
-      <div class="container">
-
-
+      <div class=" col-md-8">
         <div class="row">
+          <h3 class="col-md-9">Start Earning A  <span class="trd-highlight-text"> Percentage Daily
+          </span> By Making A  </h3>
+          <div class="col-md-3">
+            <%= link_to a, class: "trd-btn trd-btn-alt" do %> Contracts <% end %>
+          </div>
+        </div>
 
-          <!-- Sidebar -->
-          <div class="trd-sidebar trd-sidebar-left col-md-3 col-sm-4 col-xs-12">
-            <!-- Widget -->
-            <div class="btcwdgt-price"></div>
-            <div class="trd-sidebar-widget trd-pagelink-widget">
-              <ul>
-                <li> Account Details  </li>
-                <% @accounts.take(1).each do |a| %>
-                <li>
-                  Account Number: <%= a.account_number%>
-                </li>
 
-                <li>
-                  Account balance: <%= number_to_currency(a.balance, unit: "USD") %>
+
+      </div>
+      <% end %>
+
+    </div>
+  </section>
+  <!-- PAGE HEADER END -->
+
+  <!-- PAGE CONTENTS -->
+
+
+  <section class="trd-page-contents-wrapper">
+    <div class="container">
+
+
+      <div class="row">
+
+        <!-- Sidebar -->
+        <div class="trd-sidebar trd-sidebar-left col-md-3 col-sm-4 col-xs-12">
+          <!-- Widget -->
+          <div class="btcwdgt-price"></div>
+          <div class="trd-sidebar-widget trd-pagelink-widget">
+            <ul>
+              <li> Account Details  </li>
+              <% @accounts.take(1).each do |a| %>
+              <li>
+                Account Number: <%= a.account_number%>
+              </li>
+
+              <li>
+                Account balance: <%= number_to_currency(a.balance, unit: "USD") %>
 
 
 
@@ -110,30 +110,30 @@
     </div>
   </section>
 
-<%else%>
+  <%else%>
   <section class="trd-page-breadcumb-header">
-      <div class="container">
-          <div class="row">
-              <h1 class="trd-page-title">Start Increasing Your Worth By Creating An Account  Now</h1>
+    <div class="container">
+      <div class="row">
+        <h1 class="trd-page-title">Start Increasing Your Worth By Creating An Account  Now</h1>
 
-          </div>
       </div>
+    </div>
   </section>
   <section class="trd-page-contents-wrapper">
-      <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="text-center">
-                <%= link_to "Create Account", new_account_path, class: "trd-btn trd-btn-purple" %>
-              </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>  <br>
-              <br>  <br>
-                <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+            <%= link_to "Create Account", new_account_path, class: "trd-btn trd-btn-purple" %>
           </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>  <br>
+        <br>  <br>
+        <br>
       </div>
-    </section>
-<%end%>
+    </div>
+  </section>
+  <%end%>

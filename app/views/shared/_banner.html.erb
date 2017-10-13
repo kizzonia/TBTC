@@ -12,14 +12,14 @@
 
                 <h1 class="sp-layer trd-slider-text-big"
                  data-position="centerLeft" data-vertical="-230"  data-horizontal="100"  data-show-transition="left" data-hide-transition="up" data-show-delay="1000" data-hide-delay="200">
-                  Start <span class="trd-highlight-text"> Trading</span><br>  in minutes
+                Never<span class="trd-highlight-text"> Put Your Capital </span><br>    At Risk Again
 
 
                  </h1>
 
                 <p class="sp-layer trd-slider-text-small"
                  data-position="centerLeft" data-vertical="0" data-horizontal="100" data-show-delay="1500" data-hide-delay="200" data-show-transition="down" data-hide-transition="down">
-                  Join the world's largest digital currency powered trading platform.
+                  Join the world's largest digital currency Auto-powered trading platform.
                 </p>
 
                 <div class="sp-layer trd-hero-header-btns" data-position="centerLeft" data-vertical="200" data-horizontal="100" data-show-delay="2000" data-hide-delay="200" data-show-transition="down" data-hide-transition="up">
@@ -40,7 +40,7 @@
 
                 <h1 class="sp-layer trd-slider-text-big"
                  data-position="center" data-vertical="-230"  data-horizontal="300"  data-show-transition="left" data-hide-transition="up" data-show-delay="1000" data-hide-delay="200">
-                  Earn <span class="trd-highlight-text">A Percentage Daily</span><br>While you sleep
+                  Earn <span class="trd-highlight-text">A Percentage Daily</span><br>
                  </h1>
 
                 <p class="sp-layer trd-slider-text-small"
@@ -118,7 +118,7 @@
     <div class="container">
         <div class="row">
             <div class="trd-cta-wrapper">
-                <h3>We help you to get the best <span class="trd-highlight-text">Profit & Investment</span> growth  you need</h3>
+                <h3>We help you to get the best <span class="trd-highlight-text">Profit & Investment</span> growth And Never Lose Your Capital Ever Again</h3>
 
                 <%= link_to new_user_registration_path, class: " trd-btn trd-btn-alt" do %>
                 Sign Up Now
@@ -163,7 +163,7 @@
                         <a href="#">Upfront Risk Management</a>
                     </h3>
 
-                    <p>Easily set take profit levels, stop losses, and trailing stops that work exactly as you expect. Experience the thrill of guaranteed stops with unmatched execution speed.</p>
+                    <p>We make sure that your capital stays intact  while we trade . Experience the thrill of guaranteed stops with unmatched execution speed.</p>
                 </div>
             </div>
             <!-- End -->
@@ -192,21 +192,34 @@
 <section class="trd-counter-section trd-section trd-homesix-counter">
     <div class="container">
         <div class="row">
-            <!-- Counter Item -->
+
+          <div class="col-md-12">
+            <h1 class="text-center" style="color:#ffffff; font-size:60px;">
+              Your Capital Is Not At Risk
+            </h1>
+            <h1 class="text-center" style="color:#ffffff; font-size:40px;">
+              +
+            </h1>
+            <h1 class="text-center" style="color:#ffffff; font-size:60px;">
+            You Get 1% Daily!!
+            </h1>
+          </div>
+
+            <!-- Counter Item
             <div class="col-md-4 col-sm-4 col-xs-12 trd-counter">
                 <h3 class="trd-count" data-from="0" data-to="82784">$</h3>
                 <p>24-HOUR  &amp; VOLUME</p>
             </div>
-            <!-- End -->
 
-            <!-- Counter Item -->
+
+
             <div class="col-md-4 col-sm-4 col-xs-12 trd-counter trd-count-client">
                 <h3 class="trd-count" data-from="0" data-to="234987">$</h3>
                 <p>7-DAY VOLUME</p>
             </div>
-            <!-- End -->
 
-            <!-- Counter Item -->
+
+
             <div class="col-md-4 col-sm-4 col-xs-12 trd-counter">
                 <h3 class="trd-count" data-from="0" data-to="3345000">$</h3>
                 <p>PAYOUTS</p>
@@ -270,7 +283,33 @@
 <!-- ABOUT BUSINESS END -->
 
 <!-- CLIENT LOGO CAROUSAL -->
+<!-- COUNTER SECTION -->
+<section class="trd-counter-section trd-section trd-homesix-counter">
+    <div class="container">
+        <div class="row">
+        
+          <div class="col-md-4 col-sm-4 col-xs-12 trd-counter">
+              <h3 class="trd-count" data-from="0" data-to="82784">$</h3>
+              <p>24-HOUR  &amp; VOLUME</p>
+          </div>
 
+
+
+          <div class="col-md-4 col-sm-4 col-xs-12 trd-counter trd-count-client">
+              <h3 class="trd-count" data-from="0" data-to="234987">$</h3>
+              <p>7-DAY VOLUME</p>
+          </div>
+
+
+
+          <div class="col-md-4 col-sm-4 col-xs-12 trd-counter">
+              <h3 class="trd-count" data-from="0" data-to="3345000">$</h3>
+              <p>PAYOUTS</p>
+          </div>
+
+      </div>
+  </div>
+</section>
 <!-- CLIENT LOGO CAROUSAL END -->
 <%= render "shared/pricing" %>
 
@@ -346,7 +385,7 @@
                 <h1 class="trd-section-tittle" id="contact">Stay <span class="trd-highlight-text">Connected</span></h1>
 
                 <div class="trd-contact-form-wrapper">
-                <%= simple_form_for(@welcome, :url => root_path) do |f| %>
+                <%= simple_form_for(@welcome, :url => welcome_index_path) do |f| %>
                           <%= f.error_notification %>
                       <%= f.input :name, id: 'trd-name' %>
                       <%= f.input :email, id: 'trd-email', required: true %>

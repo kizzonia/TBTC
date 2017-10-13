@@ -1,0 +1,142 @@
+
+<div class="page-header page-header-default">
+  <div class="page-header-content">
+    <div class="page-title">
+      <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Managment</span> - <%= @account.account_number %></h4>
+    </div>
+  </div>
+
+
+  <div class="breadcrumb-line">
+    <ul class="breadcrumb">
+      <li><a href="index.html"><i class="icon-home2 position-left"></i> Management</a></li>
+      <li class="active">Account Show</li>
+    </ul>
+
+
+    </ul>
+  </div>
+</div>
+<!-- /page header -->
+<div class="row">
+<div class="col-md-4">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h6 class="panel-title">Account Information</h6>
+      <div class="heading-elements">
+        <ul class="icons-list">
+                  <li><a data-action="collapse"></a></li>
+                  <li><a data-action="reload"></a></li>
+
+                </ul>
+              </div>
+    </div>
+
+    <div class="panel-body">
+      <h4> User Id: <%= @account.user_id %> </h4></hr>
+      <h4> Account Number: <%= @account.account_number %> </h4>
+      <h4> bitcoin_address: <%= @account.bitcoin_address %>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-warning">
+    <div class="panel-heading">
+      <h6 class="panel-title">Account Balance</h6>
+      <div class="heading-elements">
+        <ul class="icons-list">
+                  <li><a data-action="collapse"></a></li>
+                  <li><a data-action="reload"></a></li>
+                  <li><a data-action="close"></a></li>
+                </ul>
+              </div>
+    </div>
+
+    <div class="panel-body">
+    <h1 class="text-center"> USD <%= @account.balance %> </h1>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h6 class="panel-title">Account Withdrawal Request</h6>
+      <div class="heading-elements">
+        <ul class="icons-list">
+                  <li><a data-action="collapse"></a></li>
+                  <li><a data-action="reload"></a></li>
+                  <li><a data-action="close"></a></li>
+                </ul>
+              </div>
+    </div>
+
+    <div class="panel-body">
+    <h1 class="text-center"> Coming Soon </h1>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="panel panel-flat">
+  <div class="panel-heading">
+    <h5 class="panel-title">Accounts transactions</h5>
+    <div class="heading-elements">
+      <ul class="icons-list">
+                <li><a data-action="collapse"></a></li>
+                <li><a data-action="reload"></a></li>
+                <li><a data-action="close"></a></li>
+              </ul>
+            </div>
+  </div>
+
+  <div class="panel-body">
+
+<table class="table datatable-responsive">
+  <thead>
+    <tr>
+      <th>Account ID</th>
+      <th> Transaction Number</th>
+      <th> Transaction_type</th>
+      <th> Amount</th>
+      <th> Transaction Hash/key</th>
+      <th>Created At </th>
+      <th>Status </th>
+      <th class="text-center">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @account.transactions.each do |t| %>
+    <tr>
+      <td><%= t.account_id %></td>
+      <td><%= t.transaction_number %> </td>
+      <td><%= t.transaction_type %></td>
+      <td><%= t.amount %></td>
+      <td> <%= t.txhash %> </td>
+      <td><%= t.created_at.strftime("%d %b %Y") %></td>
+      <% if t.comfirmed? %>
+       <td><span class="label label-success">Confirmed</span> </td>
+       <% else %>
+     <td><span class="label label-danger">Not confirmed</span></td>
+     <% end %>
+      <td class="text-center">
+        <ul class="icons-list">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="icon-menu9"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><%= link_to managment_account_transaction_path(t), method: :delete, data: { confirm: 'Are you sure?' } do %><i class="icon-file-word"></i>Delete<%end%></li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <%end%>
+
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TradeBit ||Management Board </title>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <meta name="MobileOptimized" content="320">
+  <%= stylesheet_link_tag    'managment', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'managment', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="login-container bg-slate-800">
+
+  <!-- Page container -->
+  <div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+      <!-- Main content -->
+      <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+
+          <%= yield %>
+
+        </div>
+        <!-- /content area -->
+
+      </div>
+      <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+  </div>
+  <!-- /page container -->
+  <%= javascript_include_tag 'login' %>
+</body>

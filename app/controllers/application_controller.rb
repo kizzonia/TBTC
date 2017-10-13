@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  layout :layout_by_resource
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -12,4 +13,19 @@ class ApplicationController < ActionController::Base
         ])
       end
 
+end
+
+
+
+
+
+private
+def layout_by_resource
+  if devise_controller? && resource_name == :managment && action_name == 'new'
+    "devise"
+elsif devise_controller? && resource_name == :managment && action_name == 'edit'
+  'managment'
+else
+  "application"
+end
 end

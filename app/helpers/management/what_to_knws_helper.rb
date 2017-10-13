@@ -1,0 +1,2 @@
+module Management::WhatToKnwsHelper
+end

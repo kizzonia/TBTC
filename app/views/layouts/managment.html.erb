@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TradeBit ||Management Board </title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <meta name="MobileOptimized" content="320">
+    <%= stylesheet_link_tag    'managment', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'managment', 'data-turbolinks-track': 'reload' %>
+  </head>
+<body class="navbar-top">
+  <%= render "mshared/navbar" %>
+  <%= render "mshared/sidebar" %>
+
+
+  <!-- Main content -->
+<div class="content-wrapper">
+  <!-- Content area -->
+  <div class="content">
+
+        <% if notice %>
+        <div class="container" style="position:absolute; top:100px; left:210px; z-index:10;">
+          <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-success fade in">
+           <a href="#" class="close" data-dismiss="alert">&times;</a>
+          <p><%= notice %> </p>
+        </div>
+      </div>
+          </div>
+          <% elsif alert %>
+          <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="alert alert-danger fade in">
+                 <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <p><%= alert %></p>
+              </div>
+            </div>
+          </div>
+              <% end %>
+
+    <!-- Main charts -->
+
+            <%= yield %>
+
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+  </body>

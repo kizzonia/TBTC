@@ -1,0 +1,72 @@
+
+<div class="page-header page-header-default">
+  <div class="page-header-content">
+    <div class="page-title">
+      <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Managment</span> - Dashboard</h4>
+    </div>
+  </div>
+
+  <div class="breadcrumb-line">
+    <ul class="breadcrumb">
+      <li><a href="index.html"><i class="icon-home2 position-left"></i> Management</a></li>
+      <li class="active">Accounts</li>
+    </ul>
+
+  </div>
+</div>
+<!-- /page header -->
+<div class="panel panel-flat">
+  <div class="panel-heading">
+    <h5 class="panel-title">Accounts List</h5>
+    <div class="heading-elements">
+      <ul class="icons-list">
+                <li><a data-action="collapse"></a></li>
+                <li><a data-action="reload"></a></li>
+                <li><a data-action="close"></a></li>
+              </ul>
+            </div>
+  </div>
+
+  <div class="panel-body">
+  </div>
+<table class="table datatable-responsive">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Account Number</th>
+      <th>Account Balance</th>
+      <th>Bitcoin address</th>
+      <th>Created At </th>
+      <th class="text-center">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @accounts.each do |a| %>
+    <tr>
+      <td><%= a.user_id %></td>
+      <td><%= a.account_number %> </td>
+      <td><%= a.balance %></td>
+      <td><%= a.bitcoin_address %></td>
+      <td><%= a.created_at.strftime("%d %b %Y") %></td>
+      <td><span class="label label-success">Active</span></td>
+      <td class="text-center">
+        <ul class="icons-list">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="icon-menu9"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><%= link_to managment_account_path(a) do %><i class="icon-file-pdf"></i>View<%end %></li>
+              <li><%= link_to managment_account_path(a) do %><i class="icon-file-excel"></i>Edit<%end%></li>
+              <li><%= link_to managment_account_path(a), method: :delete, data: { confirm: 'Are you sure?' } do %><i class="icon-file-word"></i>Delete<%end%></li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <%end%>
+
+  </tbody>
+</table>
+</div>

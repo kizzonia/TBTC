@@ -1,0 +1,58 @@
+<div class="page-header page-header-default">
+  <div class="page-header-content">
+    <div class="page-title">
+      <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Managment</span> - Edit Account</h4>
+    </div>
+  </div>
+
+
+  <div class="breadcrumb-line">
+    <ul class="breadcrumb">
+      <li><a href="index.html"><i class="icon-home2 position-left"></i> Management</a></li>
+      <li class="active">Account Edit</li>
+    </ul>
+
+
+    </ul>
+  </div>
+</div>
+<!-- /page header -->
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<div class="panel panel-flat">
+  <div class="panel-heading">
+    <h5 class="panel-title">Edit <%= resource_name.to_s.humanize %></h5>
+    <div class="heading-elements">
+      <ul class="icons-list">
+                <li><a data-action="collapse"></a></li>
+                <li><a data-action="reload"></a></li>
+                <li><a data-action="close"></a></li>
+              </ul>
+            </div>
+  </div>
+
+  <div class="panel-body">
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+    <%= f.input :password_confirmation, required: false %>
+    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
+</div>

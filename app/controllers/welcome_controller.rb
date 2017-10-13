@@ -1,11 +1,8 @@
 class WelcomeController < ApplicationController
-  def index
+  def new
     @welcome = Welcome.new
   end
-  def new
-  
-    end
-  
+
     def create
       @welcome = Welcome.new(params[:welcome])
       @welcome.request = request

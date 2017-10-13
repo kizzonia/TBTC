@@ -5,10 +5,10 @@ class Welcome < MailForm::Base
     attribute :message
     attribute :amount
     attribute :nickname,  :captcha  => true
-  
+
   # Declare the e-mail headers. It accepts anything the mail method
   # in ActionMailer accepts.
-  
+
   def headers
       {
         :subject => "Support Request ",
@@ -17,4 +17,3 @@ class Welcome < MailForm::Base
       }
     end
   end
-  
