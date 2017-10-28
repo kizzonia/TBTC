@@ -37,6 +37,10 @@ module Accounts
       @errors << "Amount must be higher than USD 50.00"
 
     end
+
+    if @txhash.length < 55
+      @errors << "Invalid Transaction Hash"
+    end
   end
 
 

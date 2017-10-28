@@ -8,8 +8,6 @@ class Transaction < ApplicationRecord
   validates :transaction_number, presence: true, uniqueness: true
   validates :txhash, presence: true,  uniqueness: true, if: -> {transaction_type == "deposit"}
 
-  validates :completed_at, :inclusion => { :in => [true, false] }
-
   def comfirmed?
     !comfirmed_at.blank?
   end
